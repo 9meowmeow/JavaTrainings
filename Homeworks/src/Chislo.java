@@ -10,21 +10,30 @@ public class Chislo
 
         while(n != 0)
         {
-            n = scanner.nextInt();
+            try
+            {
+                n = scanner.nextInt();
+                if(n == 0)
+                {
+                    break;
+                }
 
-            if(n == 0)
+                if(n % 3 == 0)
+                {
+                    System.out.println("Число делится на 3");
+                }
+                else
+                {
+                    System.out.println("Число не делится на 3");
+                }
+            }
+            catch (Exception e)
             {
-                break;
+                scanner.nextLine();
+                System.out.println("Не верные данные!");
             }
 
-            if(n % 3 == 0)
-            {
-                System.out.println("Число делится на 3");
-            }
-            else
-            {
-                System.out.println("Число не делится на 3");
-            }
+
         }
     }
 }
